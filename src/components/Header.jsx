@@ -14,7 +14,7 @@ export default class Header extends Component {
             Idea Credits
             <Icon name='external-link' mx='2px' />
           </Link> <br/>
-          <Link target='_blank' color='teal.500' href='#'>
+          <Link target='_blank' color='teal.500' href='https://github.com/Dev-CasperTheGhost/search-country-information-react'>
             Source Code
             <Icon name='external-link' mx='2px' />
           </Link>
