@@ -1,6 +1,6 @@
 # Find Country Information
 
-Find country information of all around the globe!
+Search country Information from all over the globe!
 
 **Warning:** This App loads a lot of data.
 
