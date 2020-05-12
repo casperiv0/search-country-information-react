@@ -73,7 +73,7 @@ export default class AllCountriesList extends Component {
           ) : (
             countries.map((country, index) => {
               return (
-                <Link href={'/' + country.name} key={index}>
+                <Link href={'/search-country-information-react/' + country.name} key={index}>
                   <Box maxW='sm' borderWidth='1px' rounded='lg'>
                     <Image src={country.flag} alt={country.name} />
                     <Box p="5">

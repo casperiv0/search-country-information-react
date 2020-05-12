@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link, Icon } from '@chakra-ui/core';
+import { Link, Icon, Heading } from '@chakra-ui/core';
 
 const url = 'https://restcountries.eu/rest/v2/name/';
 
@@ -44,6 +44,8 @@ export default class CountryInformation extends Component {
           <Link href="/" className="back-btn"> 
             <Icon  name="arrow-back" color="white.500"/> {" "}
           Back</Link>
+
+          <Heading>This Page is still under development.</Heading>
       </div>
     );
   }
