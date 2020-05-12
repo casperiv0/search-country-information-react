@@ -14,5 +14,5 @@ export default class SpinnerArea extends Component {
         />
       </div>
     );
-  }
-}
+  };
+};
