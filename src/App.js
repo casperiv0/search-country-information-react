@@ -27,8 +27,8 @@ class App extends Component {
         <CSSReset />
         <Header />
         <Router>
-          <Route path="/search-country-information-react/" exact component={AllCountriesList} />
-          <Route path="/search-country-information-react/:country" exact component={CountryInformation} />
+          <Route path="/" exact component={AllCountriesList} />
+          <Route path="/:country" exact component={CountryInformation} />
         </Router>
       </ThemeProvider>
       </div>

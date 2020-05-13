@@ -34,9 +34,9 @@ export default class SearchField extends Component {
 
   handleSelect = (e) => {
     const region = e.target.value;
-    let url = `http://restcountries.eu/rest/v2/region/${region}`;
+    let url = `https://restcountries.eu/rest/v2/region/${region}`;
     if (region === 'all') {
-      url = 'http://restcountries.eu/rest/v2/all';
+      url = 'https://restcountries.eu/rest/v2/all';
     }
     this.props.getCountries(url);
   };
@@ -45,7 +45,7 @@ export default class SearchField extends Component {
     this.setState({
       countryName: '',
     });
-    this.props.getCountries('http://restcountries.eu/rest/v2/all');
+    this.props.getCountries('https://restcountries.eu/rest/v2/all');
   };
 
   render() {
