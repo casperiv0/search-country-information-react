@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/search-country-information-react/static/css/main.2ec83890.chunk.css",
-    "main.js": "/search-country-information-react/static/js/main.0df899d0.chunk.js",
-    "main.js.map": "/search-country-information-react/static/js/main.0df899d0.chunk.js.map",
+    "main.js": "/search-country-information-react/static/js/main.009b9f97.chunk.js",
+    "main.js.map": "/search-country-information-react/static/js/main.009b9f97.chunk.js.map",
     "runtime-main.js": "/search-country-information-react/static/js/runtime-main.c8839705.js",
     "runtime-main.js.map": "/search-country-information-react/static/js/runtime-main.c8839705.js.map",
     "static/js/2.9af9ae7e.chunk.js": "/search-country-information-react/static/js/2.9af9ae7e.chunk.js",
     "static/js/2.9af9ae7e.chunk.js.map": "/search-country-information-react/static/js/2.9af9ae7e.chunk.js.map",
     "index.html": "/search-country-information-react/index.html",
-    "precache-manifest.51a20117da1847823c2258ad140c9be6.js": "/search-country-information-react/precache-manifest.51a20117da1847823c2258ad140c9be6.js",
+    "precache-manifest.b60bcd3e1fc97f7fff3975faf65150d4.js": "/search-country-information-react/precache-manifest.b60bcd3e1fc97f7fff3975faf65150d4.js",
     "service-worker.js": "/search-country-information-react/service-worker.js",
     "static/css/main.2ec83890.chunk.css.map": "/search-country-information-react/static/css/main.2ec83890.chunk.css.map",
     "static/js/2.9af9ae7e.chunk.js.LICENSE.txt": "/search-country-information-react/static/js/2.9af9ae7e.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.c8839705.js",
     "static/js/2.9af9ae7e.chunk.js",
     "static/css/main.2ec83890.chunk.css",
-    "static/js/main.0df899d0.chunk.js"
+    "static/js/main.009b9f97.chunk.js"
   ]
 }
