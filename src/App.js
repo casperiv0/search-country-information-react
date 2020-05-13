@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CSSReset, ThemeProvider, theme } from '@chakra-ui/core';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import AllCountriesList from './components/AllCountriesList/AllCountriesList';
 import CountryInformation from './components/CountryInformation/CountryInformation';
 
@@ -26,9 +26,11 @@ class App extends Component {
         <ThemeProvider theme={customTheme}>
           <CSSReset />
           <Header />
-          <Router>
-            <Route path={process.env.PUBLIC_URL + "/"} exact component={AllCountriesList} />
-            <Route path={process.env.PUBLIC_URL + "/:country"} exact component={CountryInformation} />
+          <Router basename="/">
+            <Route exact path="/"  component={AllCountriesList} />
+          </Router>
+          <Router basename="/c">
+          <Route path="/:country" component={CountryInformation} />
           </Router>
         </ThemeProvider>
       </div>

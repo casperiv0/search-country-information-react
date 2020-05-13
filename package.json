@@ -2,7 +2,7 @@
   "name": "search-country-info-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/",
+  "homepage": "https://dev-caspertheghost.github.io/search-country-information-react/",
   "dependencies": {
     "@chakra-ui/core": "^0.7.0",
     "@emotion/core": "^10.0.28",
