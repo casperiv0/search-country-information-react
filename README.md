@@ -8,7 +8,7 @@ Search country Information from all over the globe!
 
 ## Demo
 
-[Github Pages](https:/github.com)
+[Github Pages](https://dev-caspertheghost.github.io/search-country-information-react/)
 
 ## What I learned
 
