@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/search-country-information-react/static/css/main.2ec83890.chunk.css",
-    "main.js": "/search-country-information-react/static/js/main.761412a3.chunk.js",
-    "main.js.map": "/search-country-information-react/static/js/main.761412a3.chunk.js.map",
+    "main.css": "/search-country-information-react/static/css/main.fc00a5b8.chunk.css",
+    "main.js": "/search-country-information-react/static/js/main.d9a82530.chunk.js",
+    "main.js.map": "/search-country-information-react/static/js/main.d9a82530.chunk.js.map",
     "runtime-main.js": "/search-country-information-react/static/js/runtime-main.c8839705.js",
     "runtime-main.js.map": "/search-country-information-react/static/js/runtime-main.c8839705.js.map",
-    "static/js/2.9af9ae7e.chunk.js": "/search-country-information-react/static/js/2.9af9ae7e.chunk.js",
-    "static/js/2.9af9ae7e.chunk.js.map": "/search-country-information-react/static/js/2.9af9ae7e.chunk.js.map",
+    "static/js/2.88236fe4.chunk.js": "/search-country-information-react/static/js/2.88236fe4.chunk.js",
+    "static/js/2.88236fe4.chunk.js.map": "/search-country-information-react/static/js/2.88236fe4.chunk.js.map",
     "index.html": "/search-country-information-react/index.html",
-    "precache-manifest.df8de43941cd28af9b3d62533ac28631.js": "/search-country-information-react/precache-manifest.df8de43941cd28af9b3d62533ac28631.js",
+    "precache-manifest.1a1fcb522169074d6aae3d35c84a9a58.js": "/search-country-information-react/precache-manifest.1a1fcb522169074d6aae3d35c84a9a58.js",
     "service-worker.js": "/search-country-information-react/service-worker.js",
-    "static/css/main.2ec83890.chunk.css.map": "/search-country-information-react/static/css/main.2ec83890.chunk.css.map",
-    "static/js/2.9af9ae7e.chunk.js.LICENSE.txt": "/search-country-information-react/static/js/2.9af9ae7e.chunk.js.LICENSE.txt"
+    "static/css/main.fc00a5b8.chunk.css.map": "/search-country-information-react/static/css/main.fc00a5b8.chunk.css.map",
+    "static/js/2.88236fe4.chunk.js.LICENSE.txt": "/search-country-information-react/static/js/2.88236fe4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c8839705.js",
-    "static/js/2.9af9ae7e.chunk.js",
-    "static/css/main.2ec83890.chunk.css",
-    "static/js/main.761412a3.chunk.js"
+    "static/js/2.88236fe4.chunk.js",
+    "static/css/main.fc00a5b8.chunk.css",
+    "static/js/main.d9a82530.chunk.js"
   ]
 }
