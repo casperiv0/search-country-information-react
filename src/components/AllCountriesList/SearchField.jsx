@@ -4,7 +4,6 @@ import {
   FormControl,
   FormLabel,
   Button,
-  Grid,
   Select,
   InputRightAddon,
   InputGroup,
@@ -53,7 +52,7 @@ export default class SearchField extends Component {
     return (
       <form className='search-container' onSubmit={this.searchCountry}>
         <FormControl>
-          <Grid templateColumns='75% 25%' gap='4'>
+          <div className="search-container-grid">
             <div>
               <FormLabel>Enter Country</FormLabel>
               <InputGroup>
@@ -84,7 +83,7 @@ export default class SearchField extends Component {
                 <option value='oceania'>Oceania</option>
               </Select>
             </div>
-          </Grid>
+          </div>
         </FormControl>
         <FormControl style={{ marginTop: '20px' }}>
           <Button type='submit'>Search</Button>

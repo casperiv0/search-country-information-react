@@ -42,7 +42,7 @@ export default class CountryInformation extends Component {
     const { country } = this.state;
     return (
       <div style={{ marginTop: '20px' }}>
-        <Link href='/' className='back-btn'>
+        <Link href='/search-country-information-react/#/' className='back-btn'>
           <Icon name='arrow-back' color='white.500' />
           Back
         </Link>
@@ -82,11 +82,11 @@ export default class CountryInformation extends Component {
                   </p>
                 </div>
 
-
-
                 <div>
-                <p>
-                    <span style={{ fontWeight: 'bold' }}>Top Level Domain: </span>
+                  <p>
+                    <span style={{ fontWeight: 'bold' }}>
+                      Top Level Domain:{' '}
+                    </span>
                     {country.topLevelDomain[0]}
                   </p>
                   <p>
@@ -98,21 +98,23 @@ export default class CountryInformation extends Component {
                     {country.alpha3Code}
                   </p>
                   <p>
-                    <span style={{ fontWeight: 'bold' }}>Languages: </span>
-                    {country.languages.map((lang, index) => {
-                      return <ListItem key={index}>
-                          {lang.name} ({lang.nativeName})
-                      </ListItem>
-                    })}
-                  </p>
-                  <p>
                     <span style={{ fontWeight: 'bold' }}>Currencies: </span>
                     {country.currencies.map((currency, index) => {
-                      return <ListItem key={index}>
-                        {currency.name}
-                      </ListItem>
+                      return <ListItem key={index}>{currency.name}</ListItem>;
                     })}
                   </p>
+                </div>
+                <div className='languages'>
+                  <span style={{ fontWeight: 'bold' }}>Languages: </span>
+                  <div className="languages-grid">
+                  {country.languages.map((lang, index) => {
+                    return (
+                      <div className='lang-item' key={index}>
+                        {lang.name} ({lang.nativeName})
+                      </div>
+                    );
+                  })}
+                  </div>
                 </div>
               </div>
             </div>
