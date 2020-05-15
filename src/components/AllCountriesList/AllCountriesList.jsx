@@ -53,11 +53,12 @@ export default class AllCountriesList extends Component {
   };
 
   loadMore = () => {
+    const newIndex = this.state.maxCountriesPerPageIndex + 20
     this.setState({
-      maxCountriesPerPageIndex: this.state.maxCountriesPerPageIndex + 20,
+      maxCountriesPerPageIndex: newIndex,
       maxCountriesPerPage: [...this.state.countries].slice(
         0,
-        this.state.maxCountriesPerPageIndex
+        newIndex
       ),
     });
   };
