@@ -60,6 +60,7 @@ export default class SearchField extends Component {
                   type='text'
                   id='country'
                   rounded='0'
+                  isRequired
                   value={countryName}
                   onChange={this.handleSearchInput}
                 />
@@ -72,7 +73,7 @@ export default class SearchField extends Component {
             </div>
             <div>
               <FormLabel>Filter by Region</FormLabel>
-              <Select onChange={this.handleSelect}>
+              <Select isRequired onChange={this.handleSelect}>
                 <option defaultValue value='all'>
                   All
                 </option>

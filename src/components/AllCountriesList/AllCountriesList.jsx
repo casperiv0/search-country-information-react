@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Box, Image, Heading,Link } from '@chakra-ui/core';
+import { Box, Image, Heading, Link, Button } from '@chakra-ui/core';
 
 import SearchField from './SearchField';
 import SpinnerArea from './SpinnerArea';
@@ -13,7 +13,9 @@ export default class AllCountriesList extends Component {
 
     this.state = {
       countries: [],
+      maxCountriesPerPage: [],
       loading: true,
+      maxCountriesPerPageIndex: 30,
     };
   }
 
@@ -26,6 +28,10 @@ export default class AllCountriesList extends Component {
       .then((res) => {
         this.setState({
           countries: res.data,
+          maxCountriesPerPage: res.data.slice(
+            0,
+            this.state.maxCountriesPerPageIndex
+          ),
         });
         setTimeout(() => {
           this.setState({
@@ -37,12 +43,22 @@ export default class AllCountriesList extends Component {
   };
 
   searchCountry = (countryName) => {
-    const filteredCountry = this.state.countries.filter(function(country)  {
+    const filteredCountry = this.state.countries.filter(function (country) {
       return country.name.toLowerCase() === countryName.toLowerCase();
     });
-    
+
     this.setState({
-      countries: filteredCountry,
+      maxCountriesPerPage: filteredCountry,
+    });
+  };
+
+  loadMore = () => {
+    this.setState({
+      maxCountriesPerPageIndex: this.state.maxCountriesPerPageIndex + 20,
+      maxCountriesPerPage: [...this.state.countries].slice(
+        0,
+        this.state.maxCountriesPerPageIndex
+      ),
     });
   };
 
@@ -57,7 +73,7 @@ export default class AllCountriesList extends Component {
   }
 
   render() {
-    const { countries, loading } = this.state;
+    const { maxCountriesPerPage, loading } = this.state;
     return (
       <>
         {/* Search Field */}
@@ -71,12 +87,14 @@ export default class AllCountriesList extends Component {
           {loading ? (
             <SpinnerArea />
           ) : (
-            countries.map((country, index) => {
+            maxCountriesPerPage.map((country, index) => {
               return (
-                <Link href={'/search-country-information-react/#/c/' + country.name} key={index}>
+                <Link
+                  href={'/search-country-information-react/#/c/' + country.name}
+                  key={index}>
                   <Box maxW='sm' borderWidth='1px' rounded='lg'>
                     <Image src={country.flag} alt={country.name} />
-                    <Box p="5">
+                    <Box p='5'>
                       <Box alignItems='baseline'>
                         <Box style={{ fontWeight: 'bold' }}>
                           <Heading>{country.name}</Heading>
@@ -112,6 +130,15 @@ export default class AllCountriesList extends Component {
               );
             })
           )}
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button
+            mb='20'
+            mt='20'
+            style={{ width: '250px' }}
+            onClick={this.loadMore}>
+            Load more
+          </Button>
         </div>
       </>
     );
