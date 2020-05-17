@@ -15,7 +15,7 @@ export default class AllCountriesList extends Component {
       countries: [],
       maxCountriesPerPage: [],
       loading: true,
-      maxCountriesPerPageIndex: 30,
+      maxCountriesPerPageIndex: 20,
     };
   }
 
@@ -44,7 +44,7 @@ export default class AllCountriesList extends Component {
 
   searchCountry = (countryName) => {
     const filteredCountry = this.state.countries.filter(function (country) {
-      return country.name.toLowerCase() === countryName.toLowerCase();
+      return country.name.toLowerCase().includes(countryName.toLowerCase());
     });
 
     this.setState({
@@ -53,13 +53,10 @@ export default class AllCountriesList extends Component {
   };
 
   loadMore = () => {
-    const newIndex = this.state.maxCountriesPerPageIndex + 20
+    const newIndex = this.state.maxCountriesPerPageIndex + 20;
     this.setState({
       maxCountriesPerPageIndex: newIndex,
-      maxCountriesPerPage: [...this.state.countries].slice(
-        0,
-        newIndex
-      ),
+      maxCountriesPerPage: [...this.state.countries].slice(0, newIndex),
     });
   };
 

@@ -3,7 +3,6 @@ import {
   Input,
   FormControl,
   FormLabel,
-  Button,
   Select,
   InputRightAddon,
   InputGroup,
@@ -20,13 +19,16 @@ export default class SearchField extends Component {
   }
 
   handleSearchInput = (e) => {
+    let value = e.target.value;
     this.setState({
-      countryName: e.target.value,
+      countryName: value,
     });
+
+    this.searchCountry();
   };
 
   searchCountry = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     const { countryName } = this.state;
     this.props.searchCountry(countryName);
   };
@@ -63,6 +65,7 @@ export default class SearchField extends Component {
                   isRequired
                   value={countryName}
                   onChange={this.handleSearchInput}
+                  placeholder="this will automatically search"
                 />
                 <InputRightAddon
                   onClick={this.clearInput}
@@ -85,9 +88,6 @@ export default class SearchField extends Component {
               </Select>
             </div>
           </div>
-        </FormControl>
-        <FormControl style={{ marginTop: '20px' }}>
-          <Button type='submit'>Search</Button>
         </FormControl>
       </form>
     );
