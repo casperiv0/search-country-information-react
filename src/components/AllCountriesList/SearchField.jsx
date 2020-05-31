@@ -23,7 +23,6 @@ export default class SearchField extends Component {
     this.setState({
       countryName: value,
     });
-
     this.searchCountry();
   };
 
@@ -54,7 +53,7 @@ export default class SearchField extends Component {
     return (
       <form className='search-container' onSubmit={this.searchCountry}>
         <FormControl>
-          <div className="search-container-grid">
+          <div className='search-container-grid'>
             <div>
               <FormLabel>Enter Country</FormLabel>
               <InputGroup>
@@ -62,10 +61,9 @@ export default class SearchField extends Component {
                   type='text'
                   id='country'
                   rounded='0'
-                  isRequired
                   value={countryName}
                   onChange={this.handleSearchInput}
-                  placeholder="this will automatically search"
+                  placeholder='this will automatically search'
                 />
                 <InputRightAddon
                   onClick={this.clearInput}

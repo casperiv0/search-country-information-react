@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link, Icon, Heading, Image, ListItem } from '@chakra-ui/core';
+import SpinnerArea from '../AllCountriesList/SpinnerArea';
 
 const url = 'https://restcountries.eu/rest/v2/name/';
 
@@ -24,8 +25,6 @@ export default class CountryInformation extends Component {
             country: res.data[0],
           });
         } else {
-          // Country not found
-          console.log(res.data);
           return this.setState({
             message: 'There was an error getting the country!',
           });
@@ -104,6 +103,7 @@ export default class CountryInformation extends Component {
                     })}
                   </p>
                 </div>
+              </div>
                 <div className='languages'>
                   <span style={{ fontWeight: 'bold' }}>Languages: </span>
                   <div className="languages-grid">
@@ -116,11 +116,10 @@ export default class CountryInformation extends Component {
                   })}
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         ) : (
-          <h1>Loading...</h1>
+          <SpinnerArea />
         )}
       </div>
     );

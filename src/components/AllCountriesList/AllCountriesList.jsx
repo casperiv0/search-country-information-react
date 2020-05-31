@@ -43,13 +43,20 @@ export default class AllCountriesList extends Component {
   };
 
   searchCountry = (countryName) => {
-    const filteredCountry = this.state.countries.filter(function (country) {
-      return country.name.toLowerCase().includes(countryName.toLowerCase());
-    });
-
-    this.setState({
-      maxCountriesPerPage: filteredCountry,
-    });
+    if (countryName !== '') {
+      const filteredCountry = [...this.state.countries].filter(function (
+        country
+      ) {
+        return country.name.toLowerCase().includes(countryName.toLowerCase());
+      });
+      this.setState({
+        maxCountriesPerPage: filteredCountry,
+      });
+    } else {
+      this.setState({
+        maxCountriesPerPage: [...this.state.countries],
+      });
+    }
   };
 
   loadMore = () => {
@@ -81,63 +88,71 @@ export default class AllCountriesList extends Component {
         />
 
         {/* Grid with all Countries */}
-        <div className='all-countries-grid'>
+        <>
           {loading ? (
             <SpinnerArea />
           ) : (
-            maxCountriesPerPage.map((country, index) => {
-              return (
-                <Link
-                  href={'/search-country-information-react/#/c/' + country.name}
-                  key={index}>
-                  <Box maxW='sm' borderWidth='1px' rounded='lg'>
-                    <Image src={country.flag} alt={country.name} />
-                    <Box p='5'>
-                      <Box alignItems='baseline'>
-                        <Box style={{ fontWeight: 'bold' }}>
-                          <Heading>{country.name}</Heading>
-                        </Box>
-                        <Box mt='1'>
-                          <p>
-                            <span style={{ fontWeight: 'bold' }}>
-                              Population:{' '}
-                            </span>{' '}
-                            {country.population
-                              .toString()
-                              .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
-                          </p>
-                        </Box>
-                        <Box mt='1'>
-                          <p>
-                            <span style={{ fontWeight: 'bold' }}>Region: </span>
-                            {country.region}
-                          </p>
-                        </Box>
-                        <Box mt='1'>
-                          <p>
-                            <span style={{ fontWeight: 'bold' }}>
-                              Capital:{' '}
-                            </span>
-                            {country.capital}
-                          </p>
+            <>
+              <div className='all-countries-grid'>
+                {maxCountriesPerPage.map((country, index) => {
+                  return (
+                    <Link
+                      href={
+                        '/search-country-information-react/#/c/' + country.name
+                      }
+                      key={index}>
+                      <Box maxW='sm' borderWidth='1px' rounded='lg'>
+                        <Image src={country.flag} alt={country.name} />
+                        <Box p='5'>
+                          <Box alignItems='baseline'>
+                            <Box style={{ fontWeight: 'bold' }}>
+                              <Heading>{country.name}</Heading>
+                            </Box>
+                            <Box mt='1'>
+                              <p>
+                                <span style={{ fontWeight: 'bold' }}>
+                                  Population:{' '}
+                                </span>{' '}
+                                {country.population
+                                  .toString()
+                                  .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
+                              </p>
+                            </Box>
+                            <Box mt='1'>
+                              <p>
+                                <span style={{ fontWeight: 'bold' }}>
+                                  Region:{' '}
+                                </span>
+                                {country.region}
+                              </p>
+                            </Box>
+                            <Box mt='1'>
+                              <p>
+                                <span style={{ fontWeight: 'bold' }}>
+                                  Capital:{' '}
+                                </span>
+                                {country.capital}
+                              </p>
+                            </Box>
+                          </Box>
                         </Box>
                       </Box>
-                    </Box>
-                  </Box>
-                </Link>
-              );
-            })
+                    </Link>
+                  );
+                })}
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Button
+                  mb='20'
+                  mt='20'
+                  style={{ width: '250px' }}
+                  onClick={this.loadMore}>
+                  Load more
+                </Button>
+              </div>
+            </>
           )}
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <Button
-            mb='20'
-            mt='20'
-            style={{ width: '250px' }}
-            onClick={this.loadMore}>
-            Load more
-          </Button>
-        </div>
+        </>
       </>
     );
   }
