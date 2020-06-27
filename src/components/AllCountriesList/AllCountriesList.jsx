@@ -12,9 +12,9 @@ export default class AllCountriesList extends Component {
     super();
 
     this.state = {
+      loading: true,
       countries: [],
       maxCountriesPerPage: [],
-      loading: true,
       maxCountriesPerPageIndex: 20,
     };
   }
@@ -32,12 +32,8 @@ export default class AllCountriesList extends Component {
             0,
             this.state.maxCountriesPerPageIndex
           ),
+          loading: false,
         });
-        setTimeout(() => {
-          this.setState({
-            loading: false,
-          });
-        }, 1000);
       })
       .catch((err) => console.log(err));
   };
@@ -69,12 +65,6 @@ export default class AllCountriesList extends Component {
 
   componentDidMount() {
     this.getCountries(url);
-
-    setTimeout(() => {
-      this.setState({
-        loading: false,
-      });
-    }, 1000);
   }
 
   render() {
@@ -141,15 +131,18 @@ export default class AllCountriesList extends Component {
                   );
                 })}
               </div>
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Button
-                  mb='20'
-                  mt='20'
-                  style={{ width: '250px' }}
-                  onClick={this.loadMore}>
-                  Load more
-                </Button>
-              </div>
+              {/* Don't show load more btn if there's nothing else to load */}
+              {this.state.countries.length !== maxCountriesPerPage.length ? (
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <Button
+                    mb='20'
+                    mt='20'
+                    style={{ width: '250px' }}
+                    onClick={this.loadMore}>
+                    Load more
+                  </Button>
+                </div>
+              ) : null}
             </>
           )}
         </>

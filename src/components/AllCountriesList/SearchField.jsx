@@ -26,8 +26,8 @@ export default class SearchField extends Component {
     this.searchCountry();
   };
 
-  searchCountry = (event) => {
-    // event.preventDefault();
+  searchCountry = (e) => {
+    e.preventDefault();
     const { countryName } = this.state;
     this.props.searchCountry(countryName);
   };
