@@ -19,6 +19,7 @@ export default class SearchField extends Component {
   }
 
   handleSearchInput = (e) => {
+    e.preventDefault();
     let value = e.target.value;
     this.setState({
       countryName: value,
@@ -27,7 +28,7 @@ export default class SearchField extends Component {
   };
 
   searchCountry = (e) => {
-    e.preventDefault();
+    e && e.preventDefault();
     const { countryName } = this.state;
     this.props.searchCountry(countryName);
   };
