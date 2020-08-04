@@ -91,7 +91,7 @@ export default class AllCountriesList extends Component {
                         '/search-country-information-react/#/c/' + country.name
                       }
                       key={index}>
-                      <Box maxW='sm' borderWidth='1px' rounded='lg'>
+                      <Box borderWidth='1px' rounded="sm">
                         <Image src={country.flag} alt={country.name} />
                         <Box p='5'>
                           <Box alignItems='baseline'>
