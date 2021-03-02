@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { CSSReset, ThemeProvider, theme } from '@chakra-ui/core';
+import React, { Component } from "react";
+import { CSSReset, ChakraProvider, theme } from "@chakra-ui/react";
 import { HashRouter as Router, Route } from "react-router-dom";
-import AllCountriesList from './components/AllCountriesList/AllCountriesList';
-import CountryInformation from './components/CountryInformation/CountryInformation';
+import AllCountriesList from "./components/AllCountriesList/AllCountriesList";
+import CountryInformation from "./components/CountryInformation/CountryInformation";
 
-import Header from "./components/Header"
+import Header from "./components/Header";
 
 const customTheme = {
   ...theme,
@@ -19,24 +19,22 @@ const customTheme = {
 };
 
 class App extends Component {
-
   render() {
     return (
       <div className="App">
-        <ThemeProvider theme={customTheme}>
+        <ChakraProvider theme={customTheme}>
           <CSSReset />
           <Header />
           <Router basename="/">
-            <Route exact path="/"  component={AllCountriesList} />
+            <Route exact path="/" component={AllCountriesList} />
           </Router>
           <Router basename="/c">
-          <Route path="/:country" component={CountryInformation} />
+            <Route path="/:country" component={CountryInformation} />
           </Router>
-        </ThemeProvider>
+        </ChakraProvider>
       </div>
     );
   }
-
 }
 
 export default App;

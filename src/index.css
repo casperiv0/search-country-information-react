@@ -79,10 +79,11 @@
 
 .lang-item {
   text-align: center;
-  padding: 5px;
+  padding: 0.5rem 0.8rem;
   background-color: #cbd5e0;
   margin-left: 5px;
   margin-top: 5px;
+  border-radius: 0.5rem;
 }
 
 @media screen and (min-width: 600px) {
